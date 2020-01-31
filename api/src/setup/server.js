@@ -5,6 +5,7 @@ import cors from 'cors'
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 import morgan from 'morgan'
+import router from "./router"
 
 
 const server = (server) => {
@@ -22,10 +23,8 @@ const server = (server) => {
 
     server.use(morgan('tiny'))
 
-    server.get("/", (req, res) => {
-        console.log(req);
-        res.send(200, 'Super, vous avez réussi à lancer votre route par défaut');
-    })
+     // Initializing our routes
+    router(server);
 
 }
 
