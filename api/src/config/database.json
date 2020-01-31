@@ -1,0 +1,16 @@
+{
+    "development": {
+    "username": "admin",
+    "password": "1234",
+    "database": "portfolioAlt",
+    "host": "localhost",
+    "dialect": "mysql"
+    },
+    "production": {
+    "username": "admin",
+    "password": null,
+    "database": "portfolioAlt",
+    "host": "localhost",
+    "dialect": "mysql"
+    }
+}
