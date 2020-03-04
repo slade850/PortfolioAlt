@@ -9,6 +9,10 @@ const UserController = {
     register: (req, res) => {
         UserServices.register(req)
             .then(result => res.status(result.status).send(result.payload))
+    },
+    userCall: (req, res) => {
+        UserServices.UserCall()
+            .then(result => res.status(result.status).send(result.payload))
     }
 }
 

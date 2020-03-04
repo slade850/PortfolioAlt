@@ -21,18 +21,15 @@ const Query = {
             })
         })    
     },
-    getUser: (param, successCallback, failureCallback) => {
-        let sqlQuery = "SELECT * FROM `users` ";
-        db.query(sqlQuery, (err, rows, fields, res) => {
-            if (err) {
-                return failureCallback(err);
-            }
-            if (rows.length > 0) {
-                return successCallback(rows);
-            } else {
-                return failureCallback("No pages.");
-            }
-        })
+    getUserById: (id) => {
+        return new Promise((resolve, reject) => {
+            let sqlQuery = `SELECT * FROM users WHERE id = "${id}"`;
+
+            db.query(sqlQuery, (err, res) => {
+                if (err) reject(err)
+                resolve(res[0]);
+            })
+        })    
     }
 }
 
